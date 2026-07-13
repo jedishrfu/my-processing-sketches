@@ -11,7 +11,7 @@
  *   5 = Small spatial shift (structure moved -> SSIM drops)
  *   0 = Reset (no distortion)
  *
- *   UP/DOWN = adjust strength
+ *   U/D = adjust strength up/down
  *   H = toggle heatmap overlay mode
  *
  * Notes:
@@ -83,7 +83,7 @@ void draw() {
        pad, ty);
 
   ty += 18;
-  text("Keys: 1 noise, 2 blur, 3 brightness, 4 contrast, 5 shift, 0 reset | UP/DOWN strength | H heat overlay",
+  text("Keys: 1 noise, 2 blur, 3 brightness, 4 contrast, 5 shift, 0 reset | U/D strength up/down | H heat overlay",
        pad, ty);
 
   // subtle frame
@@ -102,8 +102,8 @@ void keyPressed() {
   if (key == '5') mode = 5;
   if (key == '0') mode = 0;
 
-  if (keyCode == UP) strength = constrain(strength + 0.05f, 0, 1);
-  if (keyCode == DOWN) strength = constrain(strength - 0.05f, 0, 1);
+  if (key == 'u' || key == 'U') strength = constrain(strength + 0.05f, 0, 1);
+  if (key == 'd' || key == 'D') strength = constrain(strength - 0.05f, 0, 1);
 
   if (key == 'h' || key == 'H') heatOverlay = !heatOverlay;
 
