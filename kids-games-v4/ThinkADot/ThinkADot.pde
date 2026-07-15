@@ -25,9 +25,11 @@ void setup () {
   ff[0]=new FlipFlop( 100,  50, ff[5], ff[3], 1);
   
   // DRAW Think-A-Dot title...
-  textSize(32);  // FONT size 32 pixels
+  textSize(24);  // FONT size 32 pixels
   fill(0);       // FONT Color Black
-  text("Think-A-Dot (ESR Inc.)",70,350);
+  text("Think-A-Dot Logic Toy (ESR 1968)",70,310);
+  textSize(20);  // FONT size 32 pixels
+  text("Invented by Joe Weisbecker • U.S. Patent 3,771,754", 50,350);
   
   // DRAW ball drops on top and Set/Resets on side...
   textSize(20);
@@ -52,7 +54,7 @@ void draw() {
         fill(255,255,0);  // COLOR Yellow
       }
       
-      ellipse(ff[i].x,ff[i].y,30,30);   // DRAW a circle
+      ellipse(ff[i].x,ff[i].y,rCircle,rCircle);   // DRAW a circle
    }   
 }
 
